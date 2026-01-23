@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Blinking : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
+    public GameObject flame;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        InvokeRepeating("Blink", 0.1f, 0.1f);
     }
 
-    void Update()
+    void Blink()
     {
-        spriteRenderer.enabled = !spriteRenderer.enabled;
+        flame.SetActive(!flame.activeSelf);
     }
 }
