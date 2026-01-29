@@ -2,29 +2,29 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    public GameObject bulletPrefabs;
     public Transform firePoint;
-    public float fireRate = 0.2f;
+    public float shootingInterval = 0.2f;
 
-    private float nextFireTime = 0f;
+    private float lastBulletTime;
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && Time.time >= nextFireTime)
+        if (Input.GetMouseButton(0) && Time.time > lastBulletTime)
         {
             Shoot();
-            nextFireTime = Time.time + fireRate;
+            lastBulletTime = Time.time + shootingInterval;
         }
     }
 
     void Shoot()
     {
-        if (bulletPrefab == null || firePoint == null)
-        {
-            Debug.LogError("FirePoint or BulletPrefab is NULL");
-            return;
-        }
+        if (bulletPrefabs == null || firePoint == null) return;
 
-        Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        Instantiate(
+            bulletPrefabs,
+            firePoint.position,
+            Quaternion.identity
+        );
     }
 }
