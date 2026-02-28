@@ -1,10 +1,23 @@
 using UnityEngine;
 
-public class EnemyHealth : Health
+public class EnemyHealth : MonoBehaviour
 {
-    protected override void Die()
+    public int health = 3;
+    public GameObject explosionPrefab;
+
+    public void TakeDamage(int damage)
     {
-        base.Die();
-        Debug.Log("Enemy died");
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

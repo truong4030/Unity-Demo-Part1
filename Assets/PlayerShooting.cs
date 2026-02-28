@@ -21,10 +21,17 @@ public class PlayerShooting : MonoBehaviour
     {
         if (bulletPrefabs == null || firePoint == null) return;
 
-        Instantiate(
+        GameObject bullet = Instantiate(
             bulletPrefabs,
             firePoint.position,
             Quaternion.identity
         );
+
+        AudioSource audio = bullet.GetComponent<AudioSource>();
+
+        if (audio != null)
+        {
+            audio.Play();
+        }
     }
 }
