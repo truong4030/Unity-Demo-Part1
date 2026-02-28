@@ -11,16 +11,15 @@ public class Bullet : MonoBehaviour
         rb.velocity = Vector2.up * speed;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Enemy"))
+        var enemy = collision.GetComponent<EnemyHealth>();
+
+        if (enemy != null)
         {
-            Enemy enemy = other.GetComponent<Enemy>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(damage);
-            }
-            Destroy(gameObject);
+            enemy.TakeDamage(damage);
         }
+
+        Destroy(gameObject);
     }
 }

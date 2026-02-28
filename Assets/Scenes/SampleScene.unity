@@ -373,6 +373,21 @@ MonoBehaviour:
     type: 3}
   firePoint: {fileID: 450947368}
   shootingInterval: 0.2
+--- !u!114 &620487269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620487246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c9ea75ae0e5354cbe43c1cc4963104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1432890374417937997, guid: 46e22a74f25f5cf4e9ad8427f6ce0528,
+    type: 3}
+  defaultHealthPoint: 100
 --- !u!1001 &1069463292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -636,6 +651,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 620487268}
+    - targetCorrespondingSourceObject: {fileID: 1510184446397956, guid: 8e33fda0c220936498f5288af83d7450,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 620487269}
     - targetCorrespondingSourceObject: {fileID: 1631799836818012, guid: 8e33fda0c220936498f5288af83d7450,
         type: 3}
       insertIndex: -1
